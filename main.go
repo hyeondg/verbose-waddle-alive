@@ -99,6 +99,12 @@ func keepAlive() {
 	TargetX, TargetY := robotgo.Location()
 
 	fmt.Println("Starting keep-alive loop. Move mouse to top-left corner to stop.")
+	if err := moveTo(TargetX, TargetY, MoveDuration); errors.Is(err, errFailsafe) {
+		fmt.Println("Failsafe triggered. Exiting.")
+	}
+	if err := click(); errors.Is(err, errFailsafe) {
+		fmt.Println("Failsafe triggered. Exiting.")
+	}
 
 	for {
 		origX, origY := robotgo.Location()
