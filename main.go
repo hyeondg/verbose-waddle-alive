@@ -15,8 +15,8 @@ import (
 // Example: a blank area / wallpaper area / status area.
 const (
 	IntervalSeconds = 60
-	MoveDuration    = 200 * time.Millisecond
-	ActionPause     = 200 * time.Millisecond // Equivalent to pyautogui.PAUSE = 0.2
+	MoveDuration    = 100 * time.Millisecond
+	ActionPause     = 100 * time.Millisecond // Equivalent to pyautogui.PAUSE = 0.2
 	Failsafe        = true                   // Move mouse to top-left corner (0, 0) to abort.
 )
 
